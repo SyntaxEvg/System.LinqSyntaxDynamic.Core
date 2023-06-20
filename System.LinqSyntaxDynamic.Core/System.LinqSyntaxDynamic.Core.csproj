@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9364F39A-7495-4C9E-901D-E9E9974F0FB4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <LangVersion>latest</LangVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>System.LinqSyntaxDynamic.Core</RootNamespace>
+    <AssemblyName>System.LinqSyntaxDynamic.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>latest</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>latest</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="JetBrains.Annotations, Version=4242.42.42.42, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.Annotations.2022.3.1\lib\net20\JetBrains.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnyOfTypes\AnyOfTypes.g.cs" />
+    <Compile Include="AnyOfTypes\AnyOf_2.g.cs" />
+    <Compile Include="AnyOfTypes\HashCodeCalculator.g.cs" />
+    <Compile Include="AssemblyBuilderFactory.cs" />
+    <Compile Include="Compatibility\CustomIntrospectionExtensions.cs" />
+    <Compile Include="Compatibility\CustomTypeBuilderExtensions.cs" />
+    <Compile Include="Compatibility\CustomTypeConverterExtensions.cs" />
+    <Compile Include="Compatibility\ExpressionVisitor.cs" />
+    <Compile Include="Compatibility\LambdaExpressionExtensions.cs" />
+    <Compile Include="Compatibility\MemberInfoExtensions.cs" />
+    <Compile Include="Compatibility\Nullable\NotNullWhenAttribute.cs" />
+    <Compile Include="Compatibility\StringExtensions.cs" />
+    <Compile Include="Compatibility\Tuple.cs" />
+    <Compile Include="CustomTypeProviders\AbstractDynamicLinqCustomTypeProvider.cs" />
+    <Compile Include="CustomTypeProviders\DefaultDynamicLinqCustomTypeProvider.cs" />
+    <Compile Include="CustomTypeProviders\DynamicLinqTypeAttribute.cs" />
+    <Compile Include="CustomTypeProviders\IDynamicLinkCustomTypeProvider.cs" />
+    <Compile Include="CustomTypeProviders\IDynamicLinqCustomTypeProvider.cs" />
+    <Compile Include="DefaultAssemblyHelper.cs" />
+    <Compile Include="DefaultQueryableAnalyzer.cs" />
+    <Compile Include="DynamicClass.cs" />
+    <Compile Include="DynamicClass.net35.cs" />
+    <Compile Include="DynamicClass.uap.cs" />
+    <Compile Include="DynamicClassFactory.cs" />
+    <Compile Include="DynamicEnumerableAsyncExtensions.cs" />
+    <Compile Include="DynamicEnumerableExtensions.cs" />
+    <Compile Include="DynamicExpressionArgument.cs" />
+    <Compile Include="DynamicExpressionParser.cs" />
+    <Compile Include="DynamicGetMemberBinder.cs" />
+    <Compile Include="DynamicOrdering.cs" />
+    <Compile Include="DynamicProperty.cs" />
+    <Compile Include="DynamicQueryableExtensions.cs" />
+    <Compile Include="DynamicQueryableWithFormattableStringExtensions.cs" />
+    <Compile Include="Exceptions\ParseException.cs" />
+    <Compile Include="ExtensibilityPoint.cs" />
+    <Compile Include="Extensions\ExpandObjectExtensions.cs" />
+    <Compile Include="Extensions\LinqExtensions.cs" />
+    <Compile Include="GroupResult.cs" />
+    <Compile Include="IAssemblyHelper.cs" />
+    <Compile Include="IQueryableAnalyzer.cs" />
+    <Compile Include="PagedResult.cs" />
+    <Compile Include="ParameterExpressionHelper.cs" />
+    <Compile Include="Parser\ConstantExpressionHelper.cs" />
+    <Compile Include="Parser\ConstantExpressionWrapper.cs" />
+    <Compile Include="Parser\Constants.cs" />
+    <Compile Include="Parser\EnumerationsFromMscorlib.cs" />
+    <Compile Include="Parser\ExpressionHelper.cs" />
+    <Compile Include="Parser\ExpressionParser.cs" />
+    <Compile Include="Parser\ExpressionPromoter.cs" />
+    <Compile Include="Parser\IConstantExpressionWrapper.cs" />
+    <Compile Include="Parser\IExpressionHelper.cs" />
+    <Compile Include="Parser\IExpressionPromoter.cs" />
+    <Compile Include="Parser\IKeywordsHelper.cs" />
+    <Compile Include="Parser\ITypeFinder.cs" />
+    <Compile Include="Parser\KeywordsHelper.cs" />
+    <Compile Include="Parser\NumberParser.cs" />
+    <Compile Include="Parser\PredefinedTypesHelper.cs" />
+    <Compile Include="Parser\StringParser.cs" />
+    <Compile Include="Parser\SupportedMethods\CompareConversionType.cs" />
+    <Compile Include="Parser\SupportedMethods\IDictionarySignatures.cs" />
+    <Compile Include="Parser\SupportedMethods\IEnumerableSignatures.cs" />
+    <Compile Include="Parser\SupportedMethods\IQueryableSignatures.cs" />
+    <Compile Include="Parser\SupportedMethods\MethodData.cs" />
+    <Compile Include="Parser\SupportedMethods\MethodFinder.cs" />
+    <Compile Include="Parser\SupportedOperands\IAddAndSubtractSignatures.cs" />
+    <Compile Include="Parser\SupportedOperands\IArithmeticSignatures.cs" />
+    <Compile Include="Parser\SupportedOperands\IEqualitySignatures.cs" />
+    <Compile Include="Parser\SupportedOperands\ILogicalSignatures.cs" />
+    <Compile Include="Parser\SupportedOperands\INegationSignatures.cs" />
+    <Compile Include="Parser\SupportedOperands\INotSignatures.cs" />
+    <Compile Include="Parser\SupportedOperands\IRelationalSignatures.cs" />
+    <Compile Include="Parser\SupportedOperands\IShiftSignatures.cs" />
+    <Compile Include="Parser\TypeFinder.cs" />
+    <Compile Include="Parser\TypeHelper.cs" />
+    <Compile Include="Parser\WrappedValue.cs" />
+    <Compile Include="ParsingConfig.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Res.cs" />
+    <Compile Include="Tokenizer\TextParser.cs" />
+    <Compile Include="Tokenizer\Token.cs" />
+    <Compile Include="Tokenizer\TokenId.cs" />
+    <Compile Include="TypeConverters\CustomDateTimeConverter.cs" />
+    <Compile Include="TypeConverters\DateOnlyConverter.cs" />
+    <Compile Include="TypeConverters\ITypeConverterFactory.cs" />
+    <Compile Include="TypeConverters\TimeOnlyConverter.cs" />
+    <Compile Include="TypeConverters\TypeConverterFactory.cs" />
+    <Compile Include="Util\ParameterExpressionRenamer.cs" />
+    <Compile Include="Util\QueryableMethodFinder.cs" />
+    <Compile Include="Util\RuntimeInformationUtils.cs" />
+    <Compile Include="Validation\CallerArgumentExpressionAttribute.cs" />
+    <Compile Include="Validation\Check.cs" />
+    <Compile Include="Validation\CoreStrings.cs" />
+    <Compile Include="Validation\ValidatedNotNullAttribute.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LinkerConfig.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
